@@ -5,7 +5,7 @@
                 <div class="collapse navbar-collapse justify-content-between">
                     <el-menu class="navbar-nav w-100 custom" :unique-opened="true" menu-trigger="hover" mode="horizontal" background-color="transparent">
                         <el-menu-item index="/">
-                            <el-image v-on:click="push('/')" :src="`/assets/imgs/logo-${state.theme}.png`" style="width: 100px;" class="d-flex flex-center"></el-image>
+                            <el-image v-on:click="push('/')" :src="`/assets/imgs/logo-${state.theme}.png`" style="width: 110px;" class="d-flex flex-center"></el-image>
                         </el-menu-item>
                         <el-sub-menu v-for="(item, index) in state.menu" :key="index" :index="index.toString()" show-timeout="50" hide-timeout="50">
                             <template #title>
@@ -175,8 +175,9 @@ const method = {
     async getTheme() {
         let theme = document.querySelector('body').getAttribute('inis-theme')
         if (!utils.is.empty(theme)) {
-            if (theme.indexOf('white') !== -1) state.theme = 'white'
-            else state.theme = 'dark'
+            // if (theme.indexOf('white') !== -1) state.theme = 'white'
+            // else state.theme = 'dark'
+            state.theme = theme
         }
     },
     fn: fn => {

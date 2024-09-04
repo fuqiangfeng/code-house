@@ -26,7 +26,7 @@ import upgradePage from '{src}/comps/upgrade/page.vue'
 
 nextTick(() => {
     // white-lighten
-    const theme = 'white'
+    const theme = 'code'
     const body  = document.querySelector('body')
     body.setAttribute('data-layout', 'topnav')
     // body.setAttribute('inis-theme', 'dark')

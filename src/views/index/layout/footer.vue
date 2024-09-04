@@ -11,8 +11,8 @@
                 {{ state.site.struct?.police?.code || '公安备案' }}
             </a>
         </span>
-        <span> & <a href="https://inis.cc" target="_blank" class="text-dark">inis {{ state.version.system }}</a></span>
-        <span> & theme {{ state.version.theme }}</span>
+        <!-- <span> & <a href="https://inis.cc" target="_blank" class="text-dark">inis {{ state.version.system }}</a></span>
+        <span> & theme {{ state.version.theme }}</span> -->
     </footer>
 </template>
 

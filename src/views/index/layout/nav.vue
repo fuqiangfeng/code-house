@@ -5,7 +5,7 @@
                 <div class="collapse navbar-collapse justify-content-between">
                     <el-menu class="navbar-nav w-100" :router="false" :unique-opened="true" mode="horizontal" background-color="transparent">
                         <el-menu-item index="/">
-                            <el-image v-on:click="method.push('/')" :src="`/assets/imgs/logo-${state.theme || 'white'}.png`" style="width: 100px;" class="d-flex flex-center"></el-image>
+                            <el-image v-on:click="method.push('/')" :src="`/assets/imgs/logo-${state.theme || 'white'}.png`" style="width: 110px;" class="d-flex flex-center"></el-image>
                         </el-menu-item>
                         <el-menu-item route="/articles">
                             <span v-on:click="push({ name: 'index-articles-list' })"
@@ -185,7 +185,7 @@ const store  = {
     config: useConfigStore()
 }
 const state  = reactive({
-    theme: 'white',
+    theme: '1',
     drawer: {
         show: false,
         menu: true
@@ -223,8 +223,9 @@ const method = {
     async getTheme() {
         let theme = document.querySelector('body').getAttribute('inis-theme')
         if (!utils.is.empty(theme)) {
-            if (theme.indexOf('white') !== -1) state.theme = 'white'
-            else state.theme = 'dark'
+            // if (theme.indexOf('white') !== -1) state.theme = 'white'
+            // else state.theme = 'dark'
+            state.theme = theme
         }
     },
     // 路由跳转
