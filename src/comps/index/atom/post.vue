@@ -37,7 +37,7 @@
 
     <!-- 文章列表 - 开始 -->
     <div class="row">
-        <div v-if="!utils.is.empty(state.article.list)" v-for="item in state.article.list" :key="item.id" class="col-lg-6">
+        <div v-if="!utils.is.empty(state.article.list)" v-for="item in state.article.list" :key="item.id" class="col-lg-3">
             <div class="card mb-lg-3 mb-2 ribbon-box">
                 <div class="card-body p-2">
                     <div v-if="item.top === 1 && !state.article.load" class="ribbon-two ribbon-two-danger">
