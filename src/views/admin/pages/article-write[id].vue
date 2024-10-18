@@ -190,7 +190,7 @@
             </el-tooltip>
         </div>
     </teleport>
-    <mouse-menu ref="global-menu" v-bind="state.item.menu"></mouse-menu>
+    <mouse-menu ref="global-menu" v-bind="state.item.menu" :el="el"></mouse-menu>
 </template>
 
 <script setup>
@@ -270,6 +270,8 @@ const state  = reactive({
         group: [],
     },
 })
+
+const el = ref();
 
 onMounted(async () => {
     await method.init()

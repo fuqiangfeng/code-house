@@ -7,7 +7,7 @@
                         <el-menu-item index="/">
                             <el-image v-on:click="push('/')" :src="`/assets/imgs/logo-${state.theme}.png`" style="width: 110px;" class="d-flex flex-center"></el-image>
                         </el-menu-item>
-                        <el-sub-menu v-for="(item, index) in state.menu" :key="index" :index="index.toString()" show-timeout="50" hide-timeout="50">
+                        <el-sub-menu v-for="(item, index) in state.menu" :key="index" :index="index.toString()" :show-timeout="50" :hide-timeout="50">
                             <template #title>
                                 <span class="d-flex align-items-center">
                                     <i v-html="item.icon" style="margin-top: -2px" class="nav-icon"></i>
@@ -24,7 +24,7 @@
                         <el-menu-item index="1">
                             <upgrade-system></upgrade-system>
                         </el-menu-item>
-                        <el-sub-menu show-timeout="50" hide-timeout="50" index="login-user" class="icon-none">
+                        <el-sub-menu :show-timeout="50" :hide-timeout="50" index="login-user" class="icon-none">
                             <template #title>
                                 <div class="d-flex flex-column align-items-end user-select-text me-2">
                                     <span v-if="!utils.is.empty(store.comm.getLogin.user?.title)" class="font-14 scale-90">
@@ -40,7 +40,7 @@
                                     </strong>
                                     <small>{{store.comm.getLogin.user?.email}}</small>
                                 </div>
-                                <el-avatar :src="store.comm.getLogin.user?.avatar" shape="square" size="medium"></el-avatar>
+                                <el-avatar :src="store.comm.getLogin.user?.avatar" shape="square" size="default"></el-avatar>
                             </template>
                             <el-menu-item v-on:click="method.push({ path: '/admin' })" index="/admin">
                                 <i-svg name="console" size="16px" class="me-1"></i-svg>
@@ -111,7 +111,7 @@
                 导航菜单
             </p>
             <el-menu class="nav-bg my-1 custom" unique-opened>
-                <el-sub-menu v-for="(item, index) in state.menu" :key="index" :index="item.name.toString()" show-timeout="50" hide-timeout="50">
+                <el-sub-menu v-for="(item, index) in state.menu" :key="index" :index="item.name" :show-timeout="50" :hide-timeout="50">
                     <template #title>
                         <span class="d-flex align-items-center">
                             <i v-html="item.icon" style="margin-top: -2px;" class="nav-icon"></i>
@@ -120,7 +120,7 @@
                             </span>
                         </span>
                     </template>
-                    <el-menu-item v-for="(val, key) in item.children" :key="key" :index="val.path.toString()" v-on:click="method.fn(val.fn())">
+                    <el-menu-item v-for="(val, key) in item.children" :key="key" :index="val.path" v-on:click="method.fn(val.fn())">
                         <span class="font-14 fw-medium">{{ val.label }}</span>
                     </el-menu-item>
                 </el-sub-menu>

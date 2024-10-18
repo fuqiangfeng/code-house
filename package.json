@@ -41,7 +41,7 @@
     "unplugin-auto-import": "^0.16.6",
     "unplugin-icons": "^0.15.3",
     "unplugin-vue-components": "^0.25.2",
-    "vditor": "^3.9.5",
+    "vditor": "^3.10.6",
     "vite-plugin-bundle-analyzer": "^0.0.1",
     "vite-plugin-externals": "^0.6.2",
     "vue": "^3.3.4",
